@@ -1,18 +1,34 @@
 <script>
-    let input;
-    function onkeydown(e){
-        if(e.keyCode == 69){
-            console.log(input)
+
+    let input ="";
+    let terminalInput;
+
+    const allcommands = [
+        "help",
+        "profile",
+        "projects",
+        "contact"
+    ]
+    function commandSubmit(e) {
+        if (e.code === "Enter") {
+            input = terminalInput.value;
+            allcommands.includes(input) ? console.log(input) : "";
+            terminalInput.value = "";
+
         }
 
     }
 </script>
 
-<div style="height: 100%; overflow: hidden; width: 100%; background: #242424;  margin: 0; padding: 0;  border: white 2px solid; display: flex; align-items: end" >
-    <div style="width: 100%; margin: 0; padding: 0; display: flex; justify-content: flex-end">
-        <p style="padding-right: 50px">myportfolio@user:</p>
-        <input type="text" style="width: 90%;" bind:value={input} >
 
+<div style="height: 100%; width: 100%; border: 2px solid white; grid-row: 2; ">
+    <div style="row-span: 1; height: 95%; text-align: justify-all ;">
+        
     </div>
-</div>
+    <div style="row-span: 2; ">
+        <div style="width: 100%; margin: 0; padding: 0; display: flex; justify-content: flex-end">
+            <p style=" padding-right: 20px; padding-left: 20px; text-align: justify; font-size: 15px ">myportfolio@user:</p>
+            <input  type="text" style="width: 90%;" bind:this={terminalInput}  on:keydown={commandSubmit} >
 
+        </div></div>
+</div>
