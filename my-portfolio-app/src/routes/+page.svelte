@@ -65,9 +65,9 @@
 	}
 </script>
 
-<div class="container h-full mx-auto flex justify-center items-center bg-surface-600" on:load={checkInput("startup")}>
+<div class="container h-full mx-auto flex justify-center items-center bg-surface-900" on:load={checkInput("startup")}>
 	<div class=" w-[99%] h-[90%]  border-2 border-green-600 ">
-		<div class="relative min-h-[90%]  max-h-[90%] bg-surface-600 pt-5 pb-5 overflow-hidden" bind:this={terminalOutput} ></div>
+		<div class="relative min-h-[90%]  max-h-[90%] bg-surface-900 pt-5 pb-5 overflow-hidden" bind:this={terminalOutput} ></div>
 		<div class="h-[10%] w-[100%] bg-surface-600 flex border-2 border-green-600">
 			<div  class="w-[10%] text-center ml-[15px] mr-[15px] h-[50%]">myportfolio@user:</div>
 			<input class="w-[90%] bg-surface-600" bind:this={terminalInput} on:keydown={onekeydown}>
