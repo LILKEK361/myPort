@@ -29,10 +29,10 @@
 											 <p class="w-[10%] text-center ml-[15px] mr-[15px]" >myportfolio@user: </p>
 											 <p class="flex">
 											 	Help: displays all commands<br>
-											 	Contanct: Displays my contacts<br>
-											 	whoami: Displays infos about me<br>
+											 	contanct: displays my contacts<br>
+											 	whoami: displays infos about me<br>
 											 	clear: clears the terminal<br>
-											 	projects: Displays my GitHub Projects<br>
+											 	projects: displays my GitHub Projects<br>
 											</p>
 										 </div>`
 					break;
