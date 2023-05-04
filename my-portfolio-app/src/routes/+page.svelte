@@ -7,7 +7,7 @@
 	let terminalOutput : HTMLAreaElement;
 
 
-	const allcomands = ["help","contact", ""]
+	const allcomands = ["help","contact", "clear", "whoami"]
 
 	function onekeydown(e){
 		if(e.code === "Enter"){
@@ -18,16 +18,37 @@
 		}
 
 	}
-	function checkInput(input){
+	function checkInput(input) {
 
-		try{
-			terminalOutput.innerHTML += `<div class="w-[100%] h-[10%] flex">
+		try {
+			switch (input) {
+				case "whoami":
+						terminalOutput.innerHTML += `<div class="w-[100%] h-[10%] flex">
 											 <p class="w-[10%] text-center ml-[15px] mr-[15px]" >myportfolio@user: </p>
-											 <p class="w-[90%] text-left">Hellow</p>
+											 <p class="w-[90%] text-left">Hello I am Nick Hillmann</p>
 										 </div>`
+					break;
+				case "help":
+					terminalOutput.innerHTML += `<div class="w-[100%] h-[10%] flex">
+											 <p class="w-[10%] text-center ml-[15px] mr-[15px]" >myportfolio@user: </p>
+											 <p class="flex">
+											 	Help: displays all commands<br>
+											 	Contanct: Displays my contacts<br>
+											 	whoami: Displays infos about me<br>
+											 	clear: clears the terminal<br>
+											</p>
+										 </div>`
+					break;
+				case "clear":
+					terminalOutput.innerHTML = "";
+					break;
 
+
+
+
+			}
 		}catch (e) {
-			console.log(e)
+						console.log(e);
 		}
 
 
