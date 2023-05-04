@@ -2,6 +2,7 @@
 
 	import terminalbar from "$lib/terminalbar.svelte";
 
+
 	let input =  "";
 	let terminalInput;
 	let terminalOutput : HTMLAreaElement;
@@ -21,13 +22,8 @@
 	function checkInput(input) {
 
 		try {
-			switch (input) {
-				case "whoami":
-						terminalOutput.innerHTML += `<div class="w-[100%] h-[10%] flex">
-											 <p class="w-[10%] text-center ml-[15px] mr-[15px]" >myportfolio@user: </p>
-											 <p class="w-[90%] text-left">Hello I am Nick Hillmann</p>
-										 </div>`
-					break;
+			switch (input.toLowerCase()) {
+
 				case "help":
 					terminalOutput.innerHTML += `<div class="w-[100%] h-[10%] flex">
 											 <p class="w-[10%] text-center ml-[15px] mr-[15px]" >myportfolio@user: </p>
@@ -36,9 +32,23 @@
 											 	Contanct: Displays my contacts<br>
 											 	whoami: Displays infos about me<br>
 											 	clear: clears the terminal<br>
+											 	projects: Displays my GitHub Projects<br>
 											</p>
 										 </div>`
 					break;
+				case "whoami":
+					terminalOutput.innerHTML += `<div class="w-[100%] h-[10%] flex">
+											 		<p class="w-[10%] text-center ml-[15px] mr-[15px]" >myportfolio@user: </p>
+											 		<p class="flex">
+											 			Hello, my Name is Nick Hillmann.<br>
+											 		 	I am a Webdeveloper who learns<br>
+											 			React, JS, TypeScript, Firebase etc.<br>
+											 			I currently don't work but I always<br>
+											 			open for new ideas and projects<br>
+													</p>
+										 		   </div>`
+					break;
+
 				case "clear":
 					terminalOutput.innerHTML = "";
 					break;
@@ -55,12 +65,12 @@
 	}
 </script>
 
-<div class="container h-full mx-auto flex justify-center items-center bg-surface-600">
-	<div class=" w-[99%] h-[90%]  border-2 border-amber-50 ">
-		<div class="relative min-h-[90%]  max-h-[90%] bg-surface-600 pt-5 pb-5" bind:this={terminalOutput} ></div>
-		<div class="h-[10%] w-[100%] bg-surface-600 flex border-tertiary-200-700-token border-amber-50">
-			<div  class="w-[10%] text-center ml-[15px] mr-[15px] h-[100%]">myportfolio@user:</div>
-			<input class="w-[90%]" bind:this={terminalInput} on:keydown={onekeydown}>
+<div class="container h-full mx-auto flex justify-center items-center bg-surface-600" on:load={checkInput("startup")}>
+	<div class=" w-[99%] h-[90%]  border-2 border-green-600 ">
+		<div class="relative min-h-[90%]  max-h-[90%] bg-surface-600 pt-5 pb-5 overflow-hidden" bind:this={terminalOutput} ></div>
+		<div class="h-[10%] w-[100%] bg-surface-600 flex border-2 border-green-600">
+			<div  class="w-[10%] text-center ml-[15px] mr-[15px] h-[50%]">myportfolio@user:</div>
+			<input class="w-[90%] bg-surface-600" bind:this={terminalInput} on:keydown={onekeydown}>
 		</div>
 	</div>
 </div>
