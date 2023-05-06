@@ -1,6 +1,7 @@
 <script lang="ts">
     import ProjectComponent from "$lib/TerminalSpecificEntries/ProjectComponent.svelte";
     import StartUpComponent from "$lib/TerminalSpecificEntries/StartUpComponent.svelte";
+    import ContactComponent from "$lib/TerminalSpecificEntries/ContactComponent.svelte";
    export let data;
 
    export let userinput;
@@ -16,13 +17,13 @@
 
 <div id="TerminalWindow">
     <div class="w-[100%] h-[10%] flex">
-        <p class="w-[10%] text-center ml-[15px] mr-[15px]" >myportfolio@user: </p>
+        <p class="w-[10%] text-center ml-[15px] mr-[15px]" >myportfolio@user > </p>
         <p class="w-[90%]">
             {userinput}
         </p>
     </div>
     <div class="w-[100%] h-[10%] flex">
-        <p class="w-[10%] text-center ml-[15px] mr-[15px]" >myportfolio@user: </p>
+        <p class="w-[10%] text-center ml-[15px] mr-[15px]" >myportfolio@user > </p>
 
 
         {#if userinput in data}
@@ -31,7 +32,9 @@
                 {#if userinput === "projects"}
                     <ProjectComponent />
                     {:else if userinput === "clear"}
-                    <li on:load={clear()}></li>
+                        <li on:load={clear()}></li>
+                    {:else if userinput === "contact"}
+                     <ContactComponent />
 
                     {:else}
                     {#each data[userinput] as da}

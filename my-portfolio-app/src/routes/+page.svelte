@@ -22,10 +22,10 @@
         "whoami" : [
             "I am Nick Hillmann," +
             " 18 years old, ",
-            "an informatik student at the TBZ Bremen",
+            "a computer science student at the TBZ Bremen",
             "and very engaged in learning everthing "],
         "projects" : [""],
-        "contacts" : [""],
+        "contact" : [""],
         "startup" : [""],
 
     };
@@ -72,10 +72,12 @@
                 {#each inputs as i}
                 <TerminalEntery userinput={i.toLowerCase()} data={data}></TerminalEntery>
                 {/each}
+
         </div>
-        <div class="h-[5%] w-[100%] bg-surface-600 flex  border-t-4 border-t-green-600  justify-center items-center -ms ">
-            <div class="w-[10%] h-[100%] ml-[15px] mr-2 mt-3.5 text-center ">myportfolio@user:</div>
-            <input class="w-[90%] h-[100%] bg-surface-600  outline-none "  bind:this={terminalInput} on:keydown={onekeydown} placeholder="pls enter command here">
+        <div class="h-[5%] w-[100%] bg-surface-600 flex  border-t-4 border-t-green-600  justify-center items-center content-center">
+            <div class="w-[10%] h-[100%] ml-[15px] mt-3.5  flex ">myportfolio@user <p class="text-right"> > </p></div>
+            <input class="w-[90%] h-[100%] bg-surface-600  outline-none "   bind:this={terminalInput} on:keydown={onekeydown} placeholder="pls enter command here">
+
         </div>
 
     </div>
