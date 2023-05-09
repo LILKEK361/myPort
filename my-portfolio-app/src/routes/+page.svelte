@@ -53,12 +53,6 @@
 
     }
 
-
-
-
-
-
-
 </script>
 
 <div class="container h-full mx-auto flex justify-center items-center bg-surface-900 text-green-700">
