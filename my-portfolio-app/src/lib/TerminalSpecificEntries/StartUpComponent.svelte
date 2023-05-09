@@ -1,7 +1,18 @@
 <script lang="ts">
-    let s = "Welcome to my repo"
+    let s = "Welcome to my repo".split("")
     let o = []
-    o = s.split(" ")
+
+   function delay(ms: number) {
+        return new Promise( resolve => setTimeout(resolve, ms) );
+    }
+
+    for(let i = 0; i < s.length; i++){
+        o.push(s[i])
+       async () => {
+           await delay(1000)
+       }
+       console.log(o)
+    }
 
 
 
