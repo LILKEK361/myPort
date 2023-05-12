@@ -1,17 +1,16 @@
 <script lang="ts">
+    import {tick} from "svelte";
+
     let s = "Welcome to my repo".split("")
     let o = []
 
-   function delay(ms: number) {
-        return new Promise( resolve => setTimeout(resolve, ms) );
-    }
 
-    for(let i = 0; i < s.length; i++){
-        o.push(s[i])
+    for (let i = 0; i < s.length; i++) {
+
        async () => {
-           await delay(1000)
+           o = [...o, s[i]];
+           await tick();
        }
-       console.log(o)
     }
 
 
@@ -20,7 +19,11 @@
 <div class="w-[100%] h-[10%] flex">
     <p class="w-[10%] text-center ml-[15px] mr-[15px]" >myportfolio@user > </p>
 
-        <p>Welcome to my Portfolio,<br>
-        pls enter help to display all available commands </p>
+
+
+           <p class="flex">{o}</p>
+
+
+
 
 </div>
