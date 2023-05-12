@@ -1,27 +1,26 @@
 <script lang="ts">
-    import {tick} from "svelte";
 
-    let s = "Welcome to my repo".split("")
-    let o = []
+    const welcomeText = "__          __  _                            _                            _____           _    __      _ _       \n" +
+        "\\ \\        / / | |                          | |                          |  __ \\         | |  / _|    | (_)      \n" +
+        " \\ \\  /\\  / /__| | ___ ___  _ __ ___   ___  | |_ ___    _ __ ___  _   _  | |__) |__  _ __| |_| |_ ___ | |_  ___  \n" +
+        "  \\ \\/  \\/ / _ \\ |/ __/ _ \\| '_ ` _ \\ / _ \\ | __/ _ \\  | '_ ` _ \\| | | | |  ___/ _ \\| '__| __|  _/ _ \\| | |/ _ \\ \n" +
+        "   \\  /\\  /  __/ | (_| (_) | | | | | |  __/ | || (_) | | | | | | | |_| | | |  | (_) | |  | |_| || (_) | | | (_) |\n" +
+        "    \\/  \\/ \\___|_|\\___\\___/|_| |_| |_|\\___|  \\__\\___/  |_| |_| |_|\\__, | |_|   \\___/|_|   \\__|_| \\___/|_|_|\\___/ \n" +
+        "                                                                   __/ |                                         \n" +
+        "                                                                  |___/                                          \n" +
+        "\n"
 
 
-    for (let i = 0; i < s.length; i++) {
-
-       async () => {
-           o = [...o, s[i]];
-           await tick();
-       }
-    }
 
 
 
 </script>
-<div class="w-[100%] h-[10%] flex">
-    <p class="w-[10%] text-center ml-[15px] mr-[15px]" >myportfolio@user > </p>
+<div class="w-[100%] h-[10%] text-center bg-surface-900">
 
 
 
-           <p class="flex">{o}</p>
+
+    <p class="bg-surface-900"> <pre class="bg-surface-900">{welcomeText}</pre>
 
 
 
