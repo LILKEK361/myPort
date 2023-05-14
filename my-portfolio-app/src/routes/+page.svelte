@@ -60,7 +60,7 @@
         <div class="w-[100%] h-[5%] border-green-600 border-b-2 m-0 p-0">
             <TerminalHeader />
         </div>
-        <div id="TerminalWindow" class=" min-h-[90%] max-h-[90%] bg-surface-900 pt-5 pb-5 overflow-x-hidden overflow-y-scroll"
+        <div id="TerminalWindow" class=" min-h-[90%] max-h-[90%]  pt-5 pb-5 overflow-x-hidden overflow-y-scroll"
              bind:this={terminalOutput}>
                 <StartUpComponent/>
                 {#each inputs as i}
